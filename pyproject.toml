@@ -1,0 +1,19 @@
+[project]
+name = "neotec_sign"
+authors = [{ name = "Neotec Integrated Solutions" }]
+description = "Simple PFX/P12 digital signatures for any ERPNext document"
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = [
+    "pyHanko[qr]>=0.21.0,<1.0",
+    "cryptography>=41.0.0",
+]
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.bench.frappe-dependencies]
+frappe = ">=15.0.0,<16.0.0"
+erpnext = ">=15.0.0,<16.0.0"
