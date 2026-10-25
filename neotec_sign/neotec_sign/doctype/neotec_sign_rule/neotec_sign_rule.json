@@ -1,0 +1,135 @@
+{
+ "actions": [],
+ "creation": "2026-10-08 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "document_type",
+  "enabled",
+  "certificate",
+  "print_format",
+  "letter_head",
+  "column_break_1",
+  "pages",
+  "position",
+  "allow_custom_position",
+  "auto_section",
+  "auto_sign_on_submit",
+  "condition"
+ ],
+ "fields": [
+  {
+   "fieldname": "document_type",
+   "fieldtype": "Link",
+   "label": "Document Type",
+   "options": "DocType",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled",
+   "default": "1",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "certificate",
+   "fieldtype": "Link",
+   "label": "Certificate",
+   "options": "Neotec Sign Certificate",
+   "description": "Leave empty to use the default certificate"
+  },
+  {
+   "fieldname": "print_format",
+   "fieldtype": "Link",
+   "label": "Print Format",
+   "options": "Print Format"
+  },
+  {
+   "fieldname": "letter_head",
+   "fieldtype": "Link",
+   "label": "Letter Head",
+   "options": "Letter Head"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pages",
+   "fieldtype": "Data",
+   "label": "Pages",
+   "description": "Last, First, All or a range like 1,3-5. Empty = settings default"
+  },
+  {
+   "fieldname": "position",
+   "fieldtype": "Select",
+   "label": "Position",
+   "options": "\nBottom Right\nBottom Left\nBottom Center\nTop Right\nTop Left"
+  },
+  {
+   "fieldname": "allow_custom_position",
+   "fieldtype": "Check",
+   "label": "Allow Users to Pick Position on Preview",
+   "default": "1"
+  },
+  {
+   "fieldname": "auto_section",
+   "fieldtype": "Section Break",
+   "label": "Automatic Signing"
+  },
+  {
+   "fieldname": "auto_sign_on_submit",
+   "fieldtype": "Check",
+   "label": "Sign Automatically on Submit",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "condition",
+   "fieldtype": "Code",
+   "label": "Condition",
+   "options": "PythonExpression",
+   "depends_on": "auto_sign_on_submit",
+   "description": "Optional. e.g. doc.grand_total > 0"
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-08 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neotec Sign",
+ "name": "Neotec Sign Rule",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "export": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Neotec Sign Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "export": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "field:document_type",
+ "naming_rule": "By fieldname"
+}

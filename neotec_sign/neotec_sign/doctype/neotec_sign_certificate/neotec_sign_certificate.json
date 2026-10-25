@@ -1,0 +1,208 @@
+{
+ "actions": [],
+ "creation": "2026-10-08 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "certificate_name",
+  "enabled",
+  "company",
+  "column_break_1",
+  "pfx_file",
+  "password",
+  "ask_password_on_sign",
+  "sign_section",
+  "reason",
+  "location",
+  "contact",
+  "signature_image",
+  "column_break_2",
+  "allowed_roles",
+  "info_section",
+  "subject",
+  "issuer",
+  "serial_no",
+  "column_break_3",
+  "valid_from",
+  "valid_to",
+  "fingerprint",
+  "self_signed"
+ ],
+ "fields": [
+  {
+   "fieldname": "certificate_name",
+   "fieldtype": "Data",
+   "label": "Certificate Name",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled",
+   "default": "1",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "description": "Optional. When set, this certificate can only sign documents of this company."
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pfx_file",
+   "fieldtype": "Attach",
+   "label": "PFX / P12 File",
+   "reqd": 1,
+   "description": "The .pfx / .p12 certificate file from your certificate provider — not an image. Use 'Create Test Certificate' to try the app."
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Password",
+   "label": "Certificate Password"
+  },
+  {
+   "fieldname": "ask_password_on_sign",
+   "fieldtype": "Check",
+   "label": "Ask Password at Every Signing",
+   "description": "Password is used once to read the certificate and is NOT stored. Auto-sign is not possible."
+  },
+  {
+   "fieldname": "sign_section",
+   "fieldtype": "Section Break",
+   "label": "Signature Details"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Data",
+   "label": "Reason",
+   "default": "Approved"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location",
+   "default": "Riyadh, Saudi Arabia"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Data",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "signature_image",
+   "fieldtype": "Attach Image",
+   "label": "Signature Image",
+   "description": "Optional. Handwritten signature or company seal (PNG/JPEG) shown inside the stamp. This is NOT the certificate."
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "allowed_roles",
+   "fieldtype": "Table MultiSelect",
+   "label": "Allowed Roles",
+   "options": "Neotec Sign Certificate Role",
+   "description": "Users with any of these roles can sign with this certificate. Empty = Neotec Signer."
+  },
+  {
+   "fieldname": "info_section",
+   "fieldtype": "Section Break",
+   "label": "Certificate Information (read from file)",
+   "collapsible": 0
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "label": "Issued To",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "issuer",
+   "fieldtype": "Data",
+   "label": "Issued By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "serial_no",
+   "fieldtype": "Data",
+   "label": "Serial Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "valid_from",
+   "fieldtype": "Datetime",
+   "label": "Valid From",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valid_to",
+   "fieldtype": "Datetime",
+   "label": "Valid To",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "fingerprint",
+   "fieldtype": "Small Text",
+   "label": "SHA-256 Fingerprint",
+   "read_only": 1
+  },
+  {
+   "fieldname": "self_signed",
+   "fieldtype": "Check",
+   "label": "Self-Signed (Testing Only)",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-25 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neotec Sign",
+ "name": "Neotec Sign Certificate",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "export": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Neotec Sign Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "export": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "field:certificate_name",
+ "naming_rule": "By fieldname",
+ "title_field": "certificate_name"
+}

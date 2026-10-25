@@ -1,0 +1,144 @@
+{
+ "actions": [],
+ "creation": "2026-10-08 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "default_certificate",
+  "stamp_section",
+  "stamp_text",
+  "add_qr_code",
+  "verify_base_url",
+  "column_break_s",
+  "default_position",
+  "default_pages",
+  "box_width",
+  "box_height",
+  "tsa_section",
+  "tsa_url",
+  "public_verification"
+ ],
+ "fields": [
+  {
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enable Digital Signing",
+   "default": "1"
+  },
+  {
+   "fieldname": "default_certificate",
+   "fieldtype": "Link",
+   "label": "Default Certificate",
+   "options": "Neotec Sign Certificate"
+  },
+  {
+   "fieldname": "stamp_section",
+   "fieldtype": "Section Break",
+   "label": "Signature Stamp"
+  },
+  {
+   "fieldname": "stamp_text",
+   "fieldtype": "Small Text",
+   "label": "Stamp Text",
+   "default": "Digitally signed by\n%(signer)s\n%(ts)s",
+   "description": "Placeholders: %(signer)s = certificate holder, %(ts)s = signing time"
+  },
+  {
+   "fieldname": "add_qr_code",
+   "fieldtype": "Check",
+   "label": "Add Verification QR Code",
+   "default": "1"
+  },
+  {
+   "fieldname": "verify_base_url",
+   "fieldtype": "Data",
+   "label": "Verification Base URL",
+   "description": "Leave empty to use this site's URL"
+  },
+  {
+   "fieldname": "column_break_s",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_position",
+   "fieldtype": "Select",
+   "label": "Default Position",
+   "options": "Bottom Right\nBottom Left\nBottom Center\nTop Right\nTop Left",
+   "default": "Bottom Right"
+  },
+  {
+   "fieldname": "default_pages",
+   "fieldtype": "Data",
+   "label": "Default Pages",
+   "default": "Last",
+   "description": "Last, First, All or a range like 1,3-5"
+  },
+  {
+   "fieldname": "box_width",
+   "fieldtype": "Float",
+   "label": "Stamp Width (pt)",
+   "default": "190"
+  },
+  {
+   "fieldname": "box_height",
+   "fieldtype": "Float",
+   "label": "Stamp Height (pt)",
+   "default": "60"
+  },
+  {
+   "fieldname": "tsa_section",
+   "fieldtype": "Section Break",
+   "label": "Trusted Timestamp (optional)"
+  },
+  {
+   "fieldname": "tsa_url",
+   "fieldtype": "Data",
+   "label": "Timestamp Authority (TSA) URL",
+   "description": "RFC 3161 TSA endpoint. Adds a trusted time to every signature."
+  },
+  {
+   "fieldname": "public_verification",
+   "fieldtype": "Check",
+   "label": "Allow Public Verification Page",
+   "default": "1",
+   "description": "Anyone holding the QR code / verification code can confirm a signature at /sign-verify"
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-08 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neotec Sign",
+ "name": "Neotec Sign Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "export": 1,
+   "report": 1,
+   "share": 1
+  },
+  {
+   "role": "Neotec Sign Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "export": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "issingle": 1
+}
