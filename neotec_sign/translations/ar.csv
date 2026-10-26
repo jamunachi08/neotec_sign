@@ -1,0 +1,58 @@
+Digital Signature,التوقيع الرقمي
+Sign PDF,توقيع PDF
+Signature Log,سجل التوقيعات
+Check Signatures,التحقق من التواقيع
+Certificate,الشهادة
+Certificate Password,كلمة مرور الشهادة
+Print Format,تنسيق الطباعة
+Where to sign,مكان التوقيع
+Pages,الصفحات
+Page Range,نطاق الصفحات
+Position,الموضع
+Open Preview,فتح المعاينة
+Sign & Attach,توقيع وإرفاق
+Signing…,جارٍ التوقيع…
+Signed,تم التوقيع
+Open signed PDF,فتح الملف الموقّع
+Issued to,صادرة إلى
+Valid until,صالحة حتى
+Choose on Preview,اختيار من المعاينة
+Click where the signature should go,انقر حيث تريد وضع التوقيع
+Use These Positions,استخدام هذه المواضع
+Clear,مسح
+Signature,توقيع
+Click to remove,انقر للإزالة
+Signature Check,فحص التوقيع
+Signer,الموقّع
+Signed At,وقت التوقيع
+Unaltered,غير معدّل
+Covers Whole File,يغطي الملف بالكامل
+Matches audit log,مطابق لسجل التدقيق
+Yes,نعم
+No,لا
+Verify Digital Signature,التحقق من التوقيع الرقمي
+Check,تحقق
+Verification code,رمز التحقق
+No signature found for this code.,لا يوجد توقيع لهذا الرمز.
+Valid signature record found.,تم العثور على سجل توقيع صالح.
+Document,المستند
+Signed By,موقّع من
+Signed On,تاريخ التوقيع
+Check your copy,تحقق من نسختك
+"Identical — this file is exactly the signed original.","مطابق — هذا الملف هو النسخة الموقّعة الأصلية تماماً."
+"Different — this file does not match the signed original.","مختلف — هذا الملف لا يطابق النسخة الموقّعة الأصلية."
+Only submitted documents can be signed.,يمكن توقيع المستندات المعتمدة فقط.
+No signing certificate configured.,لم يتم إعداد شهادة توقيع.
+Certificate password is required.,كلمة مرور الشهادة مطلوبة.
+Digital signing is disabled in Neotec Sign Settings.,التوقيع الرقمي معطّل في إعدادات نيوتك للتوقيع.
+Signature Image,صورة التوقيع
+Wrong File Type,نوع ملف غير صحيح
+Create Test Certificate,إنشاء شهادة تجريبية
+Name on Certificate,الاسم على الشهادة
+Organisation,المنشأة
+Create,إنشاء
+Self-Signed (Testing Only),موقّعة ذاتياً (للتجربة فقط)
+Missing Images,صور مفقودة
+Stop Signing if an Image is Missing,إيقاف التوقيع عند فقدان صورة
+Warnings,تحذيرات
+PDF Failed,فشل إنشاء PDF
