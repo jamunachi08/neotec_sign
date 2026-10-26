@@ -1,0 +1,47 @@
+{% extends "templates/web.html" %}
+{% block page_content %}
+<div class="ns-verify" style="max-width:640px;margin:40px auto">
+	<h2>{{ _("Verify Digital Signature") }}</h2>
+	<p class="text-muted">{{ _("Confirm that a signed document was issued by this organisation and has not been changed.") }}</p>
+
+	{% if not enabled %}
+		<div class="alert alert-warning">{{ _("Public verification is not enabled.") }}</div>
+	{% else %}
+	<form method="get" class="form-inline" style="display:flex;gap:8px;margin:20px 0">
+		<input class="form-control" name="code" value="{{ code }}" placeholder="{{ _('Verification code') }}" maxlength="16">
+		<button class="btn btn-primary" type="submit">{{ _("Check") }}</button>
+	</form>
+
+	{% if code and not record %}
+		<div class="alert alert-danger">{{ _("No signature found for this code.") }}</div>
+	{% elif record %}
+		<div class="alert alert-success"><b>{{ _("Valid signature record found.") }}</b></div>
+		<table class="table table-bordered">
+			<tr><th>{{ _("Document") }}</th><td>{{ _(record.reference_doctype) }} — {{ record.reference_name }}</td></tr>
+			<tr><th>{{ _("Signed By") }}</th><td>{{ record.signer_subject or "" }}</td></tr>
+			<tr><th>{{ _("Signed On") }}</th><td>{{ frappe.utils.format_datetime(record.signed_on) }}</td></tr>
+			<tr><th>{{ _("Pages") }}</th><td>{{ record.pages_signed }}</td></tr>
+			<tr><th>{{ _("File Fingerprint (SHA-256)") }}</th><td><code style="word-break:break-all" id="ns-hash">{{ record.sha256 }}</code></td></tr>
+		</table>
+
+		<h5>{{ _("Check your copy") }}</h5>
+		<p class="text-muted small">{{ _("Select the PDF you received. It is checked in your browser and never uploaded.") }}</p>
+		<input type="file" accept="application/pdf" id="ns-file" class="form-control">
+		<div id="ns-result" style="margin-top:12px"></div>
+		<script>
+		document.getElementById("ns-file").addEventListener("change", async (e) => {
+			const f = e.target.files[0]; if (!f) return;
+			const out = document.getElementById("ns-result");
+			if (!(window.crypto && crypto.subtle)) { out.innerHTML = "{{ _('Your browser cannot compute file fingerprints (HTTPS required).') }}"; return; }
+			const buf = await f.arrayBuffer();
+			const hex = [...new Uint8Array(await crypto.subtle.digest("SHA-256", buf))].map(b => b.toString(16).padStart(2, "0")).join("");
+			const ok = hex === document.getElementById("ns-hash").textContent.trim();
+			out.innerHTML = ok
+				? '<div class="alert alert-success">{{ _("Identical — this file is exactly the signed original.") }}</div>'
+				: '<div class="alert alert-danger">{{ _("Different — this file does not match the signed original.") }}</div>';
+		});
+		</script>
+	{% endif %}
+	{% endif %}
+</div>
+{% endblock %}
