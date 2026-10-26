@@ -1,0 +1,2 @@
+Copyright (c) 2026 Neotec Integrated Solutions. All rights reserved.
+Proprietary software. Bundled pdf.js (public/js/lib) is under the Apache License 2.0 — see PDFJS-LICENSE.
